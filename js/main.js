@@ -36,7 +36,18 @@ const app = Vue.createApp({
 
         },
         gemBil(){
-            console.log("er i metodem gemBIl");
+            console.log("er i metodem gemBil");
+            axios.post(baseUrl, {"vendor":this.carVendor, "model":this.carModel, "price":this.carPrice})
+            .then(response => {
+                console.log(response);
+                console.log(response.data);
+            }
+
+
+            )
+            .catch(error => {
+                console.log(error);
+            })
         },
     },
     computed: {
